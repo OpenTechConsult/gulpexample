@@ -30,3 +30,9 @@ Let's perform these steps to add gulp to our project
 Next create file called gulpfile.js
 
 > `touch gulpfile.js`
+
+## Use Gulp to create a small react project.
+
+We'll use Gulp to create a REACT project. For that we will use [gulp-babel](https://www.npmjs.com/package/gulp-babel), [gulp-sourcemaps](https://github.com/gulp-sourcemaps/gulp-sourcemaps), and [gulp-concat](https://github.com/gulp-community/gulp-concat)
+
+> Use npm with --save-dev when we want to add Gulp plugins to a project.
