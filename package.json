@@ -1,0 +1,31 @@
+{
+  "name": "gulpexample",
+  "version": "1.0.0",
+  "description": "An example project to learn front-end build system automation using gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenTechConsult/gulpexample.git"
+  },
+  "keywords": [
+    "Gulp",
+    "Automation",
+    "Front-end",
+    "Build",
+    "NPM",
+    "Git",
+    "Tasks"
+  ],
+  "author": "OpenTechConsult",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenTechConsult/gulpexample/issues"
+  },
+  "homepage": "https://github.com/OpenTechConsult/gulpexample#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
