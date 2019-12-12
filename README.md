@@ -18,9 +18,13 @@ To add Gulp to a project, we need to install both **gulp-cli** and **gulp packag
 Let's perform these steps to add gulp to our project
 
 > `npm i -g gulp-cli`
+
 > `mkdir gulpexample`
+
 > `cd gulpexample`
+
 > `npm init -y`
+
 > `npm i -save-dev gulp`
 
 Next create file called gulpfile.js
