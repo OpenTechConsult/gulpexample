@@ -1,6 +1,6 @@
 # LEARN FRONT-END BUILD SYSTEM AUTOMATION WITH GULP
 
-[Gulp](http://gulpjs.com) is a toolkit for automating painful or time-consuming tasks in our development workflow. [Gulp](http://gulpjs.com) is a build system based on streams. We can route streams together to create a build pipeline that achieve a lot. With Gulp, we can reuse parts of different build process of projects that share certain build requirement.
+***[Gulp](http://gulpjs.com) is a toolkit for automating painful or time-consuming tasks in our development workflow.*** [Gulp](http://gulpjs.com) is a build system based on streams. We can route streams together to create a build pipeline that achieve a lot. With Gulp, we can reuse parts of different build process of projects that share certain build requirement.
 
 Gulp helps achieve high level of reuse through two techniques
 
@@ -43,7 +43,7 @@ Creating Gulp tasks involves writing Node code with Gulp's API in a file called 
 
 Let's illustrate Gulp task creation by putting the following code in the _gulpfile.js_.
 
-```js 
+```js
 const gulp = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
@@ -68,4 +68,38 @@ The code use several Gulp plugins to capture, process, and write files.
 1- First we find all of the input source file by using file globbing
 2- Second, we use gulp-sourcemaps plugin to collect source-maps metrics for client side debugging. gulp-sourcemaps is use at two stage: one stage that state that we want to use source map and the other stage to write the source map file.
 3- Gulp-babel is use to process files with ES2015 and React.
+
+## Watching for changes
+
+One thing developer hates is the build/refresh cycle. The simple way to streamline builds is to use Gulp plugin to watch filesystem for changes. We are going to add then [**gulp-watch**](www.npmjs.com/package/gulp-watch) plugin to the project by typing:
+
+`npm i --save-dev gulp-watch`
+
+The we load the module as a regular node module. Then wa add a task that calls the default task from the previous example.
+
+```js
+gulp.task('watch', () => {
+    watch('app/**.jsx', () => gulp.start('default'));
+});
+```
+
+This code defines a task called watch, and then uses watch() method to watch JSX files for changes. Whenever a file change, the **default** build task will run.
+
+## Using seperate file for larger projects
+
+As projects grows, they tend to need more tasks. We end up with long gulpfile that is difficult to understand. We can get around this problem by breaking the gulpfile code into separate modules.
+Gulp uses Node's module system to load its plugins. So we can use Node's module system to split long gulpfile to make them more maintainable. To use separate files, we do the following:
+
+1. Create a folder called gulp and a sub-folder called tasks
+
+> `mkdir -p gulp/tasks`
+
+2. Inside the tasks folder create gulp build file
+
+> `cd gulp/tasks`
+> `touch development-build.js  production-build.js`
+
+3. Inside ./gulp folder, create a file called index.js
+
+> `cd ..` to cd to the gulp folder  and `touch index.js`to create the index.js file
 
