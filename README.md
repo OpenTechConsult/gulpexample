@@ -102,4 +102,3 @@ Gulp uses Node's module system to load its plugins. So we can use Node's module 
 3. Inside ./gulp folder, create a file called index.js
 
 > `cd ..` to cd to the gulp folder  and `touch index.js`to create the index.js file
-
